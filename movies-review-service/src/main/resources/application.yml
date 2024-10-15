@@ -1,0 +1,45 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: local
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: reviews
+      username: admin
+      password: password
+---
+spring:
+  config:
+    activate:
+      on-profile: nonprod
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: reviews
+      username: admin
+      password: password
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: reviews
+      username: admin
+      password: password
+---
+logging:
+  level:
+    root: info
